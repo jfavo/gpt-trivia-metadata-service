@@ -1,3 +1,7 @@
 # GPT Trivia Metadata Service
 
-Service containing API endpoints to handle
+Backend service serving API endpoints to support the GPT Trivia application
+
+## Tech stack
+
+- [NestJS](https://docs.nestjs.com/)
