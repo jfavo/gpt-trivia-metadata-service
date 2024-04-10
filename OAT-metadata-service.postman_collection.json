@@ -7,142 +7,995 @@
 	},
 	"item": [
 		{
-			"name": "Get all users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}:{{PORT}}/users",
-					"host": [
-						"{{URL}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get user by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}:{{PORT}}/users/17",
-					"host": [
-						"{{URL}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"users",
-						"17"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create new user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Testing\",\r\n    \"password\": \"AAAEEEEEa1E!\",\r\n    \"email\": \"test@email.com\",\r\n    \"birthDate\": \"1998-01-01 00:00:00\",\r\n    \"role\": \"standard\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Users endpoints",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{URL}}:{{PORT}}/users",
-					"host": [
-						"{{URL}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Jarsh\",\r\n    \"password\": \"AAAEEEEEa1E!\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{URL}}:{{PORT}}/users/login",
-					"host": [
-						"{{URL}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"users",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update existing user",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Testing\",\r\n    \"password\": \"AAAEEEEEa1E!\",\r\n    \"email\": \"test@email.com\",\r\n    \"birthDate\": \"1998-01-01 00:00:00\",\r\n    \"role\": \"standard\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Create new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Testing\",\r\n    \"password\": \"AAAEEEEEa1E!\",\r\n    \"email\": \"test@email.com\",\r\n    \"birthDate\": \"1998-01-01 00:00:00\",\r\n    \"role\": \"standard\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{URL}}:{{PORT}}/users",
-					"host": [
-						"{{URL}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"users"
-					]
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Jarsh\",\r\n    \"password\": \"AAAEEEEEa1E!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update existing user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Testing\",\r\n    \"password\": \"AAAEEEEEa1E!\",\r\n    \"email\": \"test@email.com\",\r\n    \"birthDate\": \"1998-01-01 00:00:00\",\r\n    \"role\": \"standard\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Delete user by id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{URL}}:{{PORT}}/users/17",
-					"host": [
-						"{{URL}}"
-					],
-					"port": "{{PORT}}",
-					"path": [
-						"users",
-						"17"
-					]
+			"name": "Friends endpoints",
+			"item": [
+				{
+					"name": "Get all friends",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1/friends",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1",
+								"friends"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create friend",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId1\": 1,\r\n    \"userId2\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1/friends",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1",
+								"friends"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete friend",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId1\": 1,\r\n    \"userId2\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1/friends",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1",
+								"friends"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Friend Requests endpoints",
+			"item": [
+				{
+					"name": "Get all friend requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1/friends/requests",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1",
+								"friends",
+								"requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create friend request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userRequesterId\": 1,\r\n    \"userRequestedId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1/friends/requests",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1",
+								"friends",
+								"requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update friend request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userRequesterId\": 1,\r\n    \"userRequestedId\": 2,\r\n    \"accepted\": true,\r\n    \"rejected\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1/friends/requests",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1",
+								"friends",
+								"requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete friend request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userRequesterId\": 2,\r\n    \"userRequestedId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/users/1/friends/requests",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1",
+								"friends",
+								"requests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player Pools endpoints",
+			"item": [
+				{
+					"name": "Get all player pools",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/pools",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get player pool by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/pools/8cca2ba0-acf4-4e69-8023-5a64b2d8ae92",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pools",
+								"8cca2ba0-acf4-4e69-8023-5a64b2d8ae92"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create player pool",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userIds\": [1, 2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/pools",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete player pool",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/pools/8cca2ba0-acf4-4e69-8023-5a64b2d8ae92",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pools",
+								"8cca2ba0-acf4-4e69-8023-5a64b2d8ae92"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Matches endpoints",
+			"item": [
+				{
+					"name": "Get match id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/matches/6fe273b1-d02b-49d6-a434-088f785b2591",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"matches",
+								"6fe273b1-d02b-49d6-a434-088f785b2591"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"matchData\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/matches",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update match",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6fe273b1-d02b-49d6-a434-088f785b2591\",\r\n    \"startedAt\": \"2024-04-07T18:40:51.894Z\",\r\n    \"finishedAt\": \"2024-04-07T18:50:51.894Z\",\r\n    \"matchData\": {\r\n        \"test\": [1,2,3],\r\n        \"morestuff\": 24445\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/matches",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete match by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startedAt\": \"2000-01-01T00:00:00.000Z\",\r\n    \"finishedAt\": \"2000-01-02T00:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/matches/6fe273b1-d02b-49d6-a434-088f785b2591",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"matches",
+								"6fe273b1-d02b-49d6-a434-088f785b2591"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Match Questions endpoints",
+			"item": [
+				{
+					"name": "Get match questions by category id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/1/questions",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"1",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get match questions for categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/questions",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get match questions for categories with set ids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/questions?categories=1%2C2%2C3%2C4",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "categories",
+									"value": "1%2C2%2C3%2C4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create match question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subcategoryId\": 1,\r\n    \"question\": \"What is this mofo called?\",\r\n    \"answer\": 3,\r\n    \"choice1\": \"No idea. Sugar daddy?\",\r\n    \"choice2\": \"Bleck, duh.\",\r\n    \"choice3\": \"Uhhh. Banana?\",\r\n    \"choice4\": \"Mysterio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/questions",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete match question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/questions/1",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"questions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Match Categories endpoints",
+			"item": [
+				{
+					"name": "Get all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all categories with user created categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories?user=1",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all categories with subcategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories?getSubcategories=true",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "getSubcategories",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all categories with subcategories and user created categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories?getSubcategories=true&user=1",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "getSubcategories",
+									"value": "true"
+								},
+								{
+									"key": "user",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/1",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all category with subcategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/1?getSubcategories=true",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "getSubcategories",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Music455\",\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create category with subcategories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Movies8\",\r\n    \"userId\": 1,\r\n    \"subcategories\": [\r\n        {\r\n            \"name\": \"Action\"\r\n        },\r\n        {\r\n            \"name\": \"Romance\"\r\n        },\r\n        {\r\n            \"name\": \"Adventure\"\r\n        },\r\n        {\r\n            \"name\": \"Non-Fiction\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create subcategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 19,\r\n    \"name\": \"Music\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/19/subcategories",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"19",
+								"subcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Movies333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update subcategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 10,\r\n    \"name\": \"Adventures!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/19/subcategories",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"19",
+								"subcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"name\": \"Movies3343\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/18",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subcategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Movies333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories/2/subcategories/2",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories",
+								"2",
+								"subcategories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
