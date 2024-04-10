@@ -17,3 +17,13 @@ export function CastStringUndefinedToNumber(
 
   return def;
 }
+
+/**
+ * Converts a string to title case
+ * Ex. tesTing! => Testing!
+ * @param str The string to convert to title case
+ * @returns a title cased string
+ */
+export function toTitleCase(str: string): string {
+  return str?.charAt(0).toUpperCase() + str?.slice(1).toLowerCase();
+}

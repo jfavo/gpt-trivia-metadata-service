@@ -19,7 +19,10 @@ export class DatabaseService {
       max: DBConfig.maxConnections,
       max_lifetime: DBConfig.maxConnectionLifetime,
       idle_timeout: DBConfig.idleTimeout,
-      transform: postgres.toCamel,
+      transform: {
+        ...postgres.toCamel,
+        undefined: null,
+      },
     });
   }
 }
