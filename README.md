@@ -8,4 +8,13 @@ Backend service serving API endpoints to support the GPT Trivia application
 
 ## TODO
 
-- Improve logging. Either create our own or leverage a more robust one ([Winston](https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/), [log4js](https://log4js-node.github.io/log4js-node/index.html))
+- Build stuff.
+    - Docker container setup.
+    - SSL/TLS for DB connection.
+    - Secrets management for DB credentials
+- Improve logging.
+    - The [Logger](./src/common/logger/logger.service.ts) can be more robust. Enabling exporting logs to a data store or external service (Elastic) would be beneficial.
+- Error management.
+    - Current implementation is simplistic and redundant. Util functions can consolidate logic.
+- Documentation.
+    - Generating OpenAPI documentation for the API will be beneficial
