@@ -1,6 +1,6 @@
-import { UserController } from './users.controller';
+import { UsersController } from './users.controller';
 import { Logger } from '../../../common/logger/logger.service';
-import { UserRepo } from './users.repo';
+import { UsersRepo } from './users.repo';
 import { DatabaseService } from '../../../database/database.service';
 import { spyOn } from 'jest-mock';
 import { expect, beforeEach, describe, it } from '@jest/globals';
@@ -9,7 +9,6 @@ import { ClientUser, MapClientUserFromUser } from './dto/clientUser.dto';
 import { HttpStatus } from '@nestjs/common';
 import {
   CREATE_USER_DB_ERROR,
-  CREATE_USER_DUPLICATE_USERNAME_ERROR,
   CREATE_USER_VALIDATION_ERROR,
   DELETE_USER_DB_ERROR,
   GET_USERS_DB_ERROR,
@@ -24,12 +23,13 @@ import {
 import { ErrorMessage } from '../../../common/errors/error.message';
 import { LoginUser } from './dto/loginUser.dto';
 import { User } from './dto/user.dto';
-import exp from 'constants';
+import { UsersService } from './users.service';
 
 describe('UserController', () => {
-  let userRepo: UserRepo;
+  let userRepo: UsersRepo;
+  let userService: UsersService;
   let logger: Logger;
-  let userController: UserController;
+  let userController: UsersController;
 
   let loggerErrorSpy;
 
@@ -54,9 +54,10 @@ describe('UserController', () => {
   } as unknown as DatabaseService;
 
   beforeEach(() => {
-    userRepo = new UserRepo(mockDBService);
+    userRepo = new UsersRepo(mockDBService);
+    userService = new UsersService();
     logger = new Logger();
-    userController = new UserController(userRepo, logger);
+    userController = new UsersController(userRepo, userService, logger);
 
     loggerErrorSpy = spyOn(logger, 'error').mockImplementation(() => {});
   });

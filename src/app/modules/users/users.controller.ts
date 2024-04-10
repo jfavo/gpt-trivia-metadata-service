@@ -9,7 +9,7 @@ import {
   Put,
   Res,
 } from '@nestjs/common';
-import { UserRepo } from './users.repo';
+import { UsersRepo } from './users.repo';
 import { User } from './dto/user.dto';
 import { LoginUser } from './dto/loginUser.dto';
 import { Logger } from '../../../common/logger/logger.service';
@@ -23,7 +23,6 @@ import {
   LOGIN_USER_DB_ERROR,
   DELETE_USER_DB_ERROR,
   UPDATE_USER_NOT_FOUND_ERROR,
-  UPDATE_USER_DB_ERROR,
 } from './users.errors';
 import {
   hashPassword,
@@ -31,12 +30,13 @@ import {
 } from '../../../common/auth/password/password';
 import { GenerateLoggingErrorMessage } from '../../../common/errors/error.utils';
 import { MapClientUserFromUser } from './dto/clientUser.dto';
-import { ErrorMessage } from '../../../common/errors/error.message';
+import { UsersService } from './users.service';
 
 @Controller('users')
-export class UserController {
+export class UsersController {
   constructor(
-    private userRepo: UserRepo,
+    private userRepo: UsersRepo,
+    private userService: UsersService,
     private logger: Logger,
   ) {
     logger.setContext('UserController');
@@ -121,20 +121,23 @@ export class UserController {
         return res.status(HttpStatus.CREATED).json(user);
       })
       .catch((err) => {
-        let code = HttpStatus.INTERNAL_SERVER_ERROR;
-        let returnedErr = err;
+        let code;
+        const errMessage = this.userService.handleCreateUserError(err);
 
-        // Check for duplicate username/email to give a clearer error response
-        if (err instanceof ErrorMessage) {
+        if (errMessage.code === CREATE_USER_DB_ERROR.code) {
           code = HttpStatus.CONFLICT;
         } else {
-          returnedErr = CREATE_USER_DB_ERROR;
+          code = HttpStatus.INTERNAL_SERVER_ERROR;
         }
 
         this.logger.error(
-          GenerateLoggingErrorMessage('Failed to create user in DB', err),
+          GenerateLoggingErrorMessage(
+            'Failed to create user in DB',
+            err,
+            errMessage.code,
+          ),
         );
-        return res.status(code).json(returnedErr);
+        return res.status(code).json(errMessage);
       });
   }
 
@@ -151,20 +154,23 @@ export class UserController {
         return res.status(HttpStatus.OK).json(user);
       })
       .catch((err) => {
-        let code = HttpStatus.INTERNAL_SERVER_ERROR;
-        let returnedErr = err;
+        let code;
+        const errMessage = this.userService.handleUpdateUserError(err);
 
-        // Check for duplicate username/email to give a clearer error response
-        if (err instanceof ErrorMessage) {
+        if (errMessage.code === CREATE_USER_DB_ERROR.code) {
           code = HttpStatus.CONFLICT;
         } else {
-          returnedErr = UPDATE_USER_DB_ERROR;
+          code = HttpStatus.INTERNAL_SERVER_ERROR;
         }
 
         this.logger.error(
-          GenerateLoggingErrorMessage('Failed to update user in DB', err),
+          GenerateLoggingErrorMessage(
+            'Failed to update user in DB',
+            err,
+            errMessage.code,
+          ),
         );
-        return res.status(code).json(returnedErr);
+        return res.status(code).json(errMessage);
       });
   }
 
